@@ -1,25 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import shoesData from '../data/shoes.json';
 
 function Shoes() {
-  const [shoes, setShoes] = useState([]);
-  const [filteredShoes, setFilteredShoes] = useState([]);
+  const [shoes, setShoes] = useState(shoesData);
+  const [filteredShoes, setFilteredShoes] = useState(shoesData);
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    axios.get('https://example.com/shoes')
-      .then(response => {
-        setShoes(response.data);
-        setFilteredShoes(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
-
-  const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFilterChange = (event) => {
     setFilter(event.target.value);
-    const filtered = shoes.filter(shoe => shoe.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    const filtered = shoesData.filter((shoe) => shoe.name.toLowerCase().includes(event.target.value.toLowerCase()));
     setFilteredShoes(filtered);
   };
 
@@ -28,7 +17,7 @@ function Shoes() {
       <h1>Shoes</h1>
       <input type="text" value={filter} onChange={handleFilterChange} placeholder="Search shoes" />
       <ul>
-        {filteredShoes.map(shoe => (
+        {filteredShoes.map((shoe) => (
           <li key={shoe.id}>{shoe.name}</li>
         ))}
       </ul>
