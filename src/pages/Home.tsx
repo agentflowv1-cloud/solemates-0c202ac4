@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div className="container mx-auto p-4 pt-6">
-      <h1 className="text-3xl font-bold">Welcome to SoleMates</h1>
-      <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    <div>
+      <h1>Welcome to our store</h1>
+      <p>
+        <Link to="/checkout">Proceed to checkout</Link>
+      </p>
     </div>
   );
 }
