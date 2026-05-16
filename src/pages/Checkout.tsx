@@ -1,12 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { Shopify } from 'shopify-api-node';
-
-const shopify = new Shopify({
-  shopName: 'your-shop-name',
-  apiKey: 'your-api-key',
-  password: 'your-app-password',
-});
 
 function Checkout() {
   const [name, setName] = useState('');
@@ -15,19 +7,8 @@ function Checkout() {
   const [address, setAddress] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
 
-  const handlePayment = async () => {
-    try {
-      const response = await axios.post('/api/create-transaction', {
-        name,
-        email,
-        phone,
-        address,
-        paymentMethod,
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const handlePayment = () => {
+    console.log('Payment processing...');
   };
 
   return (
