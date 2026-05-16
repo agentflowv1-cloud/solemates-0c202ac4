@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Checkout() {
   const [name, setName] = useState('');
@@ -45,6 +46,7 @@ function Checkout() {
         <br />
         <button type="button" onClick={handlePayment}>Pay Now</button>
       </form>
+      <p><Link to="/">Back to Home</Link></p>
     </div>
   );
 }
