@@ -14,6 +14,12 @@ function Navbar() {
         <li>
           <Link to="/shoes">Shoes</Link>
         </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/checkout">Checkout</Link>
+        </li>
       </ul>
     </nav>
   );
