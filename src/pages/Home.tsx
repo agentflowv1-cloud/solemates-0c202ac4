@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Home() {
   return (
     <div>
-      <h1>Welcome to our store</h1>
-      <p>
-        <Link to="/checkout">Proceed to checkout</Link>
-      </p>
+      <h1>Welcome to the Product Filtering System</h1>
+      <p>This is the home page.</p>
     </div>
   );
 }
