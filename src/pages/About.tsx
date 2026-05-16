@@ -2,9 +2,9 @@ import React from 'react';
 
 function About() {
   return (
-    <div className="container mx-auto p-4 pt-6">
-      <h1 className="text-3xl font-bold">About Us</h1>
-      <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    <div>
+      <h1>About Us</h1>
+      <p>This is the about page.</p>
     </div>
   );
 }
