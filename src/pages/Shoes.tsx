@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import shoesData from '../data/shoes.json';
+import { Link } from 'react-router-dom';
 
 function Shoes() {
   const [shoes, setShoes] = useState(shoesData);
@@ -18,7 +19,9 @@ function Shoes() {
       <input type="text" value={filter} onChange={handleFilterChange} placeholder="Search shoes" />
       <ul>
         {filteredShoes.map((shoe) => (
-          <li key={shoe.id}>{shoe.name}</li>
+          <li key={shoe.id}>{shoe.name}
+            <p><Link to="/">Back to Home</Link></p>
+          </li>
         ))}
       </ul>
     </div>
